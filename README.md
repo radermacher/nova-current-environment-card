@@ -3,6 +3,8 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/radermacher/nova-current-environment-card.svg?style=flat-square)](https://packagist.org/packages/radermacher/nova-current-environment-card)
 [![Total Downloads](https://img.shields.io/packagist/dt/radermacher/nova-current-environment-card.svg?style=flat-square)](https://packagist.org/packages/radermacher/nova-current-environment-card)
 
+![nova-current-environment-card](Screenshot.png)
+
 ## Installation
 
 You can install the package in to a Laravel app that uses [Nova](https://nova.laravel.com) via composer:
