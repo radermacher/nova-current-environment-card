@@ -1,0 +1,39 @@
+{
+    "name": "radermacher/nova-current-environment-card",
+    "description": "A Laravel Nova card to see current environment.",
+    "keywords": [
+        "laravel",
+        "nova",
+        "card"
+    ],
+    "homepage": "https://github.com/radermacher/nova-current-environment-card",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Richard Radermacher",
+            "email": "richard@radermacher.io",
+            "homepage": "https://radermacher.io",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Radermacher\\NovaCurrentEnvironmentCard\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Radermacher\\NovaCurrentEnvironmentCard\\CardServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
