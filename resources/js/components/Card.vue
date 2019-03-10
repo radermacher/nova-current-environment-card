@@ -1,7 +1,7 @@
 <template>
     <card class="flex flex-col relative nova-current-environment-card" v-bind:class="envClass">
         <div class="px-3 py-3">
-            <h3 class="text-base text-80 font-bold">Current Environment</h3>
+            <h3 class="text-base text-80 font-bold">{{__('Current Environment')}}</h3>
             <p class="text-3xl text-center pt-8 capitalize">
                 {{ currentEnvName }}
             </p>
