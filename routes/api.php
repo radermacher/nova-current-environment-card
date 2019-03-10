@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
+use Radermacher\NovaCurrentEnvironmentCard\Http\Controllers\ResourcesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +14,4 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/environment', function (Request $request) {
-    if(Auth::check()) {
-        return config('app.env', 'unknown');
-    }
-});
+Route::get('/environment', ResourcesController::class)->middleware('auth');
