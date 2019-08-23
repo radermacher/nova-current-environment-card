@@ -10,6 +10,13 @@ use Illuminate\Support\ServiceProvider;
 class CardServiceProvider extends ServiceProvider
 {
     /**
+     * Component identifier name.
+     *
+     * @var string
+     */
+    public static $name = 'nova-current-environment-card';
+
+    /**
      * Bootstrap any application services.
      *
      * @return void
@@ -20,10 +27,35 @@ class CardServiceProvider extends ServiceProvider
             $this->routes();
         });
 
+        $this->publishes([
+            __DIR__.'/../resources/lang' => resource_path('lang/vendor/'.static::$name),
+        ]);
+
         Nova::serving(function (ServingNova $event) {
-            Nova::script('nova-current-environment-card', __DIR__.'/../dist/js/card.js');
-            Nova::style('nova-current-environment-card', __DIR__.'/../dist/css/card.css');
+            Nova::script(static::$name, __DIR__.'/../dist/js/card.js');
+            Nova::style(static::$name, __DIR__.'/../dist/css/card.css');
+            Nova::translations(static::getTranslations());
         });
+    }
+
+    /**
+     * Get the translation keys from file.
+     *
+     * @return array
+     */
+    private static function getTranslations(): array
+    {
+        $translationFile = resource_path('lang/vendor/'.static::$name.'/'.app()->getLocale().'.json');
+
+        if (!is_readable($translationFile)) {
+            $translationFile = __DIR__.'/../resources/lang/'.app()->getLocale().'.json';
+
+            if (!is_readable($translationFile)) {
+                return [];
+            }
+        }
+
+        return json_decode(file_get_contents($translationFile), true);
     }
 
     /**
@@ -38,7 +70,7 @@ class CardServiceProvider extends ServiceProvider
         }
 
         Route::middleware(['nova'])
-                ->prefix('nova-vendor/nova-current-environment-card')
+                ->prefix('nova-vendor/'.static::$name)
                 ->group(__DIR__.'/../routes/api.php');
     }
 
