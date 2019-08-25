@@ -29,6 +29,13 @@ public function cards()
 }
 ```
 
+## Localization
+
+Publish the package language files to your application's `resources/lang/vendor` directory:
+```
+php artisan vendor:publish --provider="Radermacher\NovaCurrentEnvironmentCard\CardServiceProvider"
+```
+
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
