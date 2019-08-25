@@ -24,7 +24,7 @@
     ],
     "require": {
         "php": ">=7.1.0",
-        "laravel/nova": "*"
+        "laravel/nova": ">=2.1"
     },
     "autoload": {
         "psr-4": {
