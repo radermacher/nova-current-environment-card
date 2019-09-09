@@ -36,6 +36,10 @@ Publish the package language files to your application's `resources/lang/vendor`
 php artisan vendor:publish --provider="Radermacher\NovaCurrentEnvironmentCard\CardServiceProvider"
 ```
 
+## Credits
+- [Richard Radermacher](https://github.com/radermacher)
+- [All Contributors](../../contributors) 
+
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
