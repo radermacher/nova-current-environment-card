@@ -1,3 +1,7 @@
+> [!IMPORTANT]
+> This package is no longer maintained.
+> Thanks to all supporters, contributors and for the GH stars.
+
 # Current Environment Card for Nova
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/radermacher/nova-current-environment-card.svg?style=flat-square)](https://packagist.org/packages/radermacher/nova-current-environment-card)
